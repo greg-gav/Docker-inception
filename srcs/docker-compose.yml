@@ -16,7 +16,7 @@ services:
       - inception
     volumes:
       - db-data:/var/lib/mysql
-    restart: always
+    restart: "no"
 
 networks:
   inception:
