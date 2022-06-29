@@ -16,8 +16,9 @@ Containers:
 3. mariadb at port 3306
 4. redis cache for wordpress
 5. ftp server: pointing to wordpress volume
-6. adminer
-7. service of my choice
+6. Static site with my resume
+7. adminer
+8. service of my choice
 
 Volumes:
 1. wordpress database: avaliable to mariadb
@@ -28,7 +29,6 @@ Docker-network
 
 Auto-restart containers
 
-Static site with my resume
 
 Wordpress database: two users. administrator + user
 domain name pointing to localhost: bteak.42.fr
