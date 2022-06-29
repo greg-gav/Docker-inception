@@ -1,17 +1,11 @@
 # inception
 
 
-TODO:
-***subject v
-
-srcs folder is mandatory
-Makefile is mandatory
-
-
-docker-compose
+CHECK:
+openssl s_client -connect localhost:443
 
 Containers:
-1. nginx with tls v1.2 or v1.3 at port 443
+1. nginx with tls v1.2 or v1.3 at port 443 (v)
 2. wordpress and php-fpm at port 9000
 3. mariadb at port 3306
 4. redis cache for wordpress
