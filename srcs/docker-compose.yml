@@ -9,6 +9,29 @@ services:
       - "443:443"
     restart: always
 
+  mariadb:
+    build: containers/mariadb/
+    container_name: mariadb
+    networks:
+      - inception
+    volumes:
+      - db-data:/var/lib/mysql
+    restart: always
+
 networks:
   inception:
     name: inception
+
+volumes:
+  wp-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/grigory/bteak/data/wp
+  db-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/grigory/bteak/data/db

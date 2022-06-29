@@ -3,6 +3,7 @@
 
 CHECK:
 openssl s_client -connect localhost:443
+docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a
 
 Containers:
 1. nginx with tls v1.2 or v1.3 at port 443 (v)
@@ -26,3 +27,4 @@ Auto-restart containers
 
 Wordpress database: two users. administrator + user
 domain name pointing to localhost: bteak.42.fr
+The .env file should be located at the root of the srcs directory.
