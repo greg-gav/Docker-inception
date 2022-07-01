@@ -4,6 +4,8 @@ services:
   nginx:
     build: containers/nginx/
     container_name: nginx
+    env_file:
+      - .env
     networks:
       - inception
     ports:
@@ -13,6 +15,8 @@ services:
   mariadb:
     build: containers/mariadb/
     container_name: mariadb
+    env_file:
+      - .env
     networks:
       - inception
     restart: "no"
