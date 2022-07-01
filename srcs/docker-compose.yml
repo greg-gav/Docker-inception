@@ -4,17 +4,23 @@ services:
   nginx:
     build: requirements/nginx/
     container_name: nginx
+    volumes:
+      - wp-data:/var/www/html
     env_file:
       - .env
     networks:
       - inception
     ports:
       - "443:443"
+    depends_on:
+      - wordpress
     restart: unless-stopped
 
   mariadb:
     build: requirements/mariadb/
     container_name: mariadb
+    volumes:
+      - db-data:/var/lib/mysql
     env_file:
       - .env
     networks:
@@ -24,6 +30,8 @@ services:
   wordpress:
     build: requirements/wordpress/
     container_name: wordpress
+    volumes:
+      - wp-data:/var/www/html
     depends_on:
       - mariadb
     env_file:
@@ -39,13 +47,5 @@ networks:
 volumes:
   wp-data:
     driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /Users/grigory/bteak/data/wp
   db-data:
     driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /Users/grigory/bteak/data/db
