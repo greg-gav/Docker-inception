@@ -4,7 +4,8 @@ RUN apt-get -y update && apt-get -y \
 RUN	mkdir -p /run/mysqld && mkdir -p /var/lib/mysql
 RUN	chown -R mysql:mysql /run/mysqld && chown mysql:mysql /var/lib/mysql
 
-COPY /conf/conf.cnf /etc/mysql/mariadb.conf.d/
+COPY /conf/50-server.cnf /etc/mysql/mariadb.conf.d/
+
 RUN service mysql start && echo \
 "CREATE DATABASE IF NOT EXISTS wordpress; \
 CREATE USER IF NOT EXISTS 'bteak'@'%' IDENTIFIED BY 'bteak'; \

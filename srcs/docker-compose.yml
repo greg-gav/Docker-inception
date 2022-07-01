@@ -10,7 +10,7 @@ services:
       - inception
     ports:
       - "443:443"
-    restart: always
+    restart: unless-stopped
 
   mariadb:
     build: requirements/mariadb/
@@ -19,7 +19,7 @@ services:
       - .env
     networks:
       - inception
-    restart: always
+    restart: unless-stopped
 
   wordpress:
     build: requirements/wordpress/
@@ -30,11 +30,10 @@ services:
       - .env
     networks:
       - inception
-    restart: "no"
+    restart: unless-stopped
 
 networks:
   inception:
-    name: inception
     driver: bridge
 
 volumes:
