@@ -21,6 +21,17 @@ services:
       - inception
     restart: always
 
+  wordpress:
+    build: requirements/wordpress/
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    networks:
+      - inception
+    restart: always
+
 networks:
   inception:
 
