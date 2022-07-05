@@ -51,6 +51,20 @@ services:
     restart: unless-stopped
     sysctls:
       net.core.somaxconn: "4096"
+  
+  ftp:
+    build: requirements/bonus/ftp
+    container_name: ftp
+    volumes:
+      - wp-data:/var/www/html
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    networks:
+      - inception
+    restart: unless-stopped
+    environment:
+      - .env
 
 networks:
   inception:
