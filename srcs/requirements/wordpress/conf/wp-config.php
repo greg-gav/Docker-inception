@@ -18,6 +18,13 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_PORT', 6379);
+define('WP_REDIS_PASSWORD', 'redis');
+define('WP_REDIS_DATABASE', 0);
+define('WP_CACHE_KEY_SALT', 'bteak.42.fr');
+define('WP_CACHE', true);
+
 //saults
 define('AUTH_KEY',         '1^00i:mHm[Y7Q1cIF/M`$|>G%KPHl68:U>(BY~1OD^IDyW z-QT;OY373|_ea|+k');
 define('SECURE_AUTH_KEY',  'X*nI{!z7!aS^/S>7`^16wlmuvIL|c(RpBPfP-h~/F3O5od$ FbTER}QaG:*kRg2B');

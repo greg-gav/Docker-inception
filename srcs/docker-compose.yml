@@ -34,6 +34,7 @@ services:
       - wp-data:/var/www/html
     depends_on:
       - mariadb
+      - redis
     env_file:
       - .env
     networks:
