@@ -11,8 +11,8 @@ Containers:
 3. mariadb at port 3306
 4. redis cache for wordpress
 5. ftp server: pointing to wordpress volume
-6. Static site with my resume
-7. adminer
+6. adminer
+7. Static site with my resume
 8. service of my choice
 
 Volumes:
