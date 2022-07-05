@@ -40,6 +40,17 @@ services:
       - inception
     restart: unless-stopped
 
+  redis:
+    build: requirements/bonus/redis
+    container_name: redis
+    networks:
+      - inception
+    env_file:
+      - .env
+    restart: unless-stopped
+    sysctls:
+      net.core.somaxconn: "4096"
+
 networks:
   inception:
     driver: bridge
