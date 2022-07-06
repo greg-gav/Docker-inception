@@ -13,5 +13,5 @@ RUN chmod +x /run.sh
 EXPOSE 3306
 
 ENTRYPOINT ["/run.sh"]
-CMD ["mysqld_safe"]
+CMD ["mysqld"]
 
