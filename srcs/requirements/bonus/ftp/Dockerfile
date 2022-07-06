@@ -12,6 +12,7 @@ RUN mkdir -p /var/ftp
 RUN chown -R bteak:bteak /var/www/html
 
 
+STOPSIGNAL SIGQUIT
 CMD ["vsftpd", "/etc/vsftpd.conf"]
 
 # CMD ["tail", "-f", "/dev/null"]
