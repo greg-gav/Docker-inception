@@ -2,18 +2,16 @@ FROM debian:buster
 RUN apt-get -y update && apt-get -y \
         install mariadb-server
 RUN	mkdir -p /run/mysqld && mkdir -p /var/lib/mysql
-RUN	chown -R mysql:mysql /run/mysqld && chown mysql:mysql /var/lib/mysql
+RUN	chown -R mysql:mysql /run/mysqld && chown -R mysql:mysql /var/lib/mysql
 
 COPY /conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 
-RUN service mysql start && echo \
-"CREATE DATABASE IF NOT EXISTS wordpress; \
-CREATE USER IF NOT EXISTS 'bteak'@'%' IDENTIFIED BY 'bteak'; \
-GRANT ALL PRIVILEGES ON wordpress.* TO 'bteak'@'%'; \
-FLUSH PRIVILEGES; \
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';" | mysql
+COPY ./conf/run.sh /
+RUN chmod +x /run.sh
+# CMD ["tail", "-f", "/dev/null"]
 
 EXPOSE 3306
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
-CMD ["mysqld"]
+
+ENTRYPOINT ["/run.sh"]
+CMD ["mysqld_safe"]
 
