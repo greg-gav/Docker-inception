@@ -91,6 +91,15 @@ services:
       - inception
     restart: unless-stopped
 
+  resume:
+    build: requirements/bonus/resume
+    container_name: resume
+    networks:
+      - inception
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+
 networks:
   inception:
     driver: bridge
