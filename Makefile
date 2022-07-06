@@ -10,11 +10,14 @@ ${NAME}:
 
 re : fclean all
 
+stop : 
+	docker-compose -f ${SRC} down
+
 clean :
 	docker-compose -f ${SRC} down --rmi all
 
 fclean : clean
 	docker system prune -f
 
-.PHONY: clean fclean all
+.PHONY: clean fclean all stop
 
