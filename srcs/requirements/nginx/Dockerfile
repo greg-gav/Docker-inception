@@ -9,5 +9,4 @@ RUN openssl req -newkey rsa:2048 -x509 -nodes \
 COPY /conf/nginx.conf /etc/nginx/sites-available/default
 EXPOSE 443
 
-# CMD ["tail", "-f", "/dev/null"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

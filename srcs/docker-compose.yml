@@ -85,6 +85,8 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
     networks:
       - inception
+    env_file:
+      - .env
     restart: unless-stopped
 
   resume:

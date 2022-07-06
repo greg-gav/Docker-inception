@@ -1,23 +1,14 @@
 <?php
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
 define( 'DB_NAME', 'wordpress' );
-
-/** Database username */
 define( 'DB_USER', 'bteak' );
-
-/** Database password */
 define( 'DB_PASSWORD', 'bteak' );
-
-/** Database hostname */
 define( 'DB_HOST', 'mariadb' );
-
-/** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-
-/** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+
+//redis
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', 6379);
 define('WP_REDIS_PASSWORD', 'redis');

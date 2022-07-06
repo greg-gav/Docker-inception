@@ -7,4 +7,3 @@ COPY ./conf/redis.conf /etc/redis.conf
 
 CMD ["redis-server", "/etc/redis.conf", "--protected-mode no"]
 
-# CMD ["tail", "-f", "/dev/null"]

@@ -10,5 +10,4 @@ COPY ./conf/run.sh /var/www
 RUN chmod +x /var/www/run.sh
 
 ENTRYPOINT ["/var/www/run.sh"]
-# CMD ["tail", "-f", "/dev/null"]
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]

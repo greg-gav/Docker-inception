@@ -12,5 +12,4 @@ RUN wget -O "/var/www/html/index.php" "https://github.com/vrana/adminer/releases
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 
-# CMD ["tail", "-f", "/dev/null"]
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
