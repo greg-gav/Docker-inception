@@ -5,7 +5,8 @@ SRC = ./srcs/docker-compose.yml
 all : ${NAME}
 
 ${NAME}:
-	docker-compose -f ${SRC} up --build -d
+	docker-compose -f ${SRC} build --parallel
+	docker-compose -f ${SRC} up -d
 
 re : fclean all
 
