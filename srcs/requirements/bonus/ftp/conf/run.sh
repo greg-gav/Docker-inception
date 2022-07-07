@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 vsftpd_stop() {
   echo "Received SIGINT or SIGTERM. Shutting down vsftpd"
   # Set TERM
