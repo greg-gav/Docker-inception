@@ -5,7 +5,7 @@ EXPOSE 9000
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 COPY ./conf/wp-config.php /var/www/
-COPY ./conf/run.sh /var/www
+COPY ./conf/run.sh /var/www/
 
 RUN chmod +x /var/www/run.sh
 

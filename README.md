@@ -3,6 +3,7 @@
 
 CHECK:
 openssl s_client -connect localhost:443
+
 docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a
 
 Containers:

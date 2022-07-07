@@ -1,8 +1,5 @@
 <?php
 // ** Database settings - You can get this info from your web host ** //
-define( 'DB_NAME', 'wordpress' );
-define( 'DB_USER', 'bteak' );
-define( 'DB_PASSWORD', 'bteak' );
 define( 'DB_HOST', 'mariadb' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
@@ -11,9 +8,7 @@ define( 'DB_COLLATE', '' );
 //redis
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', 6379);
-define('WP_REDIS_PASSWORD', 'redis');
 define('WP_REDIS_DATABASE', 0);
-define('WP_CACHE_KEY_SALT', 'bteak.42.fr');
 define('WP_CACHE', true);
 
 //saults
