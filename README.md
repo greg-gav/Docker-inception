@@ -3,7 +3,7 @@
 
 CHECK:
 openssl s_client -connect localhost:443
-
+curl http://bteak.42.fr -k
 docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a
 
 Containers:
