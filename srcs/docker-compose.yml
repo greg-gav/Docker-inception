@@ -105,5 +105,13 @@ networks:
 volumes:
   wp-data:
     driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/bteak/data/wp'
   db-data:
     driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/bteak/data/db'
