@@ -8,7 +8,7 @@ docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a
 
 Containers:
 1. nginx with tls v1.2 or v1.3 at port 443 (v)
-2. wordpress and php-fpm at port 9000 (sed the pass?)
+2. wordpress and php-fpm at port 9000 (v)
 3. mariadb at port 3306 (v)
 4. redis cache for wordpress (v)
 5. ftp server: pointing to wordpress volume (v)
