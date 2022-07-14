@@ -13,6 +13,9 @@ Containers:
 7. static site with a mock resume at port 4000 (v)
 8. docker stats service at port 8080 (v)
 
+## Core Scheme
+![docker scheme](./plan.png)  
+
 Volumes:
 1. wordpress database: avaliable to mariadb
 2. wordpress website files: avaliable to wp and nginx
@@ -25,5 +28,4 @@ Auto-restart containers
 Wordpress database: two users. administrator + user
 domain name pointing to localhost: bteak.42.fr
 
-## Scheme
-![docker scheme](./plan.png)  
+
